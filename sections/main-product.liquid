@@ -106,10 +106,10 @@
                     </h2>
                   </a>
                 </div>
-              {%- if product.metafields.devices.compatible-devices != blank  -%}
+              {%- if product.metafields.global.compatible-devices != blank  -%}
                 <button class="accordion"><div class="icon-circle">✓</div>Compatible Devices</button>
                 <div class="panel">
-                  {{ product.metafields.devices.compatible-devices }}
+                  {{ product.metafields.global.compatible-devices }}
                 </div>
             {% endif %}
               {%- when 'price' -%}
@@ -540,6 +540,8 @@
                     </p>
                   </div>
                 {%- endif -%}
+
+
               {%- when 'complementary' -%}
                 <product-recommendations
                   class="complementary-products quick-add-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"
@@ -753,6 +755,10 @@
       {{ product | structured_data }}
     </script>
   </div>
+
+{% render 'product-banners' %}
+
+
 </product-info>
 
 {% schema %}
