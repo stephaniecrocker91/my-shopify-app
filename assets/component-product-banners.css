@@ -1,0 +1,24 @@
+/* Optional Product Banners styling on Product Page*/
+
+.image img{
+    width: 100%;
+    height: auto;
+}
+/* Hide mobile banners by default, show desktop banners */
+.banner-mobile {
+    display: none;
+}
+
+.banner-desktop {
+    display: block;
+}
+
+/* Media query: If screen size is less than or equal to 750px, show mobile banners, hide desktop banners */
+@media (max-width: 750px) {
+    .banner-desktop {
+        display: none;
+    }
+    .banner-mobile {
+        display: block;
+    }
+}

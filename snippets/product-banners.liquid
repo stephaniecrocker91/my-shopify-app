@@ -1,0 +1,31 @@
+{% comment %}
+These banners are rendered from the Product Metafields App in Shopify CMS.
+{% endcomment %}
+
+
+{{ 'component-product-banners.css' | asset_url | stylesheet_tag }}
+
+
+{%- if product.metafields.global.desktop-banner-1 != blank -%}
+  <div class="banner-desktop">
+    {{ product.metafields.global.desktop-banner-1 | metafield_file_url }}
+  </div>
+{%- endif -%}
+
+{%- if product.metafields.global.desktop-banner-2 != blank -%}
+  <div class="banner-desktop">
+    {{ product.metafields.global.desktop-banner-2 | metafield_file_url }}
+  </div>
+{%- endif -%}
+
+{%- if product.metafields.global.mobile-banner-1 != blank -%}
+  <div class="banner-mobile">
+    {{ product.metafields.global.mobile-banner-1 | metafield_file_url }}
+  </div>
+{%- endif -%}
+
+{%- if product.metafields.global.mobile-banner-2 != blank -%}
+  <div class="banner-mobile">
+    {{ product.metafields.global.mobile-banner-2 | metafield_file_url }}
+  </div>
+{%- endif -%}
