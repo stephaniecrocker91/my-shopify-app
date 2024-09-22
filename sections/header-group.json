@@ -20,10 +20,18 @@
             "text": "Discover the Perfect Fit for Every Device",
             "link": ""
           }
+        },
+        "announcement_bAn3b8": {
+          "type": "announcement",
+          "settings": {
+            "text": "Where Style Meets Protection",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_bAn3b8"
       ],
       "settings": {
         "color_scheme": "scheme-4",
