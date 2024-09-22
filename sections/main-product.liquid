@@ -1,3 +1,6 @@
+
+
+
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -105,6 +108,12 @@
                     </h2>
                   </a>
                 </div>
+              {%- if 'compatible-devices' -%}
+                <button class="accordion"><div class="icon-circle">✓</div>Compatible Devices</button>
+                <div class="panel">
+                  {{ product.metafields.devices.compatible-devices }}
+                </div>
+              {% endif %}
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -2258,3 +2267,19 @@
   ]
 }
 {% endschema %}
+
+
+<script>
+    var acc = document.querySelectorAll(".accordion");
+    acc.forEach(function(button) {
+        button.addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    });
+</script>
