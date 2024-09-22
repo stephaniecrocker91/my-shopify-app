@@ -15,8 +15,8 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Discover the latest in our collection.",
-            "heading_size": "h0"
+            "heading": "Discover the <strong>latest<\/strong> in our collection.",
+            "heading_size": "h1"
           }
         },
         "button": {
