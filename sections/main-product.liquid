@@ -1,6 +1,4 @@
 
-
-
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -108,12 +106,12 @@
                     </h2>
                   </a>
                 </div>
-              {%- if 'compatible-devices' -%}
+              {%- if product.metafields.devices.compatible-devices != blank  -%}
                 <button class="accordion"><div class="icon-circle">✓</div>Compatible Devices</button>
                 <div class="panel">
                   {{ product.metafields.devices.compatible-devices }}
                 </div>
-              {% endif %}
+            {% endif %}
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -201,11 +199,35 @@
                   {%- endif -%}
                 </p>
               {%- when 'description' -%}
-                {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                    {{ product.description }}
-                  </div>
-                {%- endif -%}
+
+              {%- if 'description' != blank -%}
+                <button class="accordion"><div class="icon-circle">✓</div>Description</button>
+                <div class="panel">
+                  {{ product.description }}
+                </div>
+              {% endif %}
+
+              {%- if product.metafields.global.features != blank -%}
+                <button class="accordion"><div class="icon-circle">✓</div>Features</button>
+                <div class="panel">
+                  {{ product.metafields.global.features }}
+                </div>
+              {% endif %}
+
+              {%- if product.metafields.global.dimensions != blank -%}
+                <button class="accordion"><div class="icon-circle">✓</div>Dimensions</button>
+                <div class="panel">
+                  {{ product.metafields.global.dimensions }}
+                </div>
+              {% endif %}
+
+              {%- if product.metafields.global.materials != blank -%}
+                <button class="accordion"><div class="icon-circle">✓</div>Materials</button>
+                <div class="panel">
+                  {{ product.metafields.global.materials }}
+                </div>
+              {% endif %}
+
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
