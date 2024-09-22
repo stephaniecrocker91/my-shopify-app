@@ -106,10 +106,10 @@
                     </h2>
                   </a>
                 </div>
-              {%- if product.metafields.devices.compatible-devices != blank  -%}
+              {%- if product.metafields.global.compatible-devices != blank  -%}
                 <button class="accordion"><div class="icon-circle">✓</div>Compatible Devices</button>
                 <div class="panel">
-                  {{ product.metafields.devices.compatible-devices }}
+                  {{ product.metafields.global.compatible-devices }}
                 </div>
             {% endif %}
               {%- when 'price' -%}
