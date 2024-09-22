@@ -1,0 +1,53 @@
+.accordion {
+    border-right: none;
+    border-left: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px 10px 10px 0;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    /* Unicode for '+' symbol */
+    font-size: 18px;
+    float: right;
+  }
+  
+  .accordion.active:after {
+    content: "\2212";
+    /* Unicode for '−' symbol */
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+  }
+  
+  .title-lines {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .line {
+    flex: 1;
+    height: 1px;
+    background-color: black;
+  }
+  
+  .title-text {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .icon-circle {
+    display: inline-flex;
+    width: 15px;
+    margin-right: 10px;
+    stroke-width: 1;
+}

@@ -1,0 +1,29 @@
+{{ 'component-product-accordion.css' | asset_url | stylesheet_tag }}
+
+{%- if product.description != blank -%}
+  <button class="accordion"><div class="icon-circle">{% render 'svg-icons' icon: 'return-arrow' %}</div>Description</button>
+  <div class="panel">
+    {{ product.description }}
+  </div>
+{% endif %}
+
+{%- if product.metafields.global.features != blank -%}
+  <button class="accordion"><div class="icon-circle">{% render 'svg-icons' icon: 'eye' %}</div>Features</button>
+  <div class="panel">
+    {{ product.metafields.global.features }}
+  </div>
+{% endif %}
+
+{%- if product.metafields.global.dimensions != blank -%}
+  <button class="accordion"><div class="icon-circle">{% render 'svg-icons' icon: 'ruler' %}</div>Dimensions</button>
+  <div class="panel">
+    {{ product.metafields.global.dimensions }}
+  </div>
+{% endif %}
+
+{%- if product.metafields.global.materials != blank -%}
+  <button class="accordion"><div class="icon-circle">{% render 'svg-icons' icon: 'materials' %}</div>Materials</button>
+  <div class="panel">
+    {{ product.metafields.global.materials }}
+  </div>
+{% endif %}
